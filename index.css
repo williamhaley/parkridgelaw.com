@@ -1,0 +1,41 @@
+body {
+  background: #f1f1f1;
+  margin-top:20px;
+}
+
+#wrapper {
+  background: #fff;
+  width: 940px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+#main {
+  margin: 20px 0px 20px 0px;
+}
+
+#main div {
+  line-height: 1.4em;
+}
+
+#header h1 {
+  font-family: 'Helvetica Neue', Arial, Helvetica, 'Nimbus Sans L', sans-serif;
+}
+
+#footer {
+  border-top: 3px solid black;
+  padding-top: 10px;
+}
+
+#header a,
+#footer a {
+  font-weight: bold;
+  font-family: 'Helvetica Neue', Arial, Helvetica, 'Nimbus Sans L', sans-serif;
+  line-height: 18px;
+  text-decoration: none;
+  color: #000;
+}
+
+form {
+  display: none;
+}
