@@ -1,0 +1,36 @@
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^williamhaleylaw\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.williamhaleylaw\.com$
+RewriteRule ^/?$ "http\:\/\/www\.parkridgelaw\.com\/" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^billhaleylaw\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.billhaleylaw\.com$
+RewriteRule ^/?$ "http\:\/\/www\.parkridgelaw\.com\/" [R=301,L]
+
+<IfModule mod_rewrite.c>
+
+ #Redirect all subdirectories to root
+ RedirectMatch permanent ^/.+/.*$ /
+
+ #RewriteCond %{REQUEST_FILENAME} !-f
+ #RewriteCond %{REQUEST_FILENAME} !-d
+ #RewriteRule ^(.*)$ index.php
+ #redirect any requests to sub directions to the root
+ #RedirectMatch temp ^/.+/.*$ /
+
+ #anything that is not a file or directory goes to index.php
+ #RewriteCond %{REQUEST_FILENAME} !-f
+ #RewriteCond %{REQUEST_FILENAME} !-d
+ #RedirectMatch ^/(.*)$ /
+ #RedirectMatch ^/$ /index.php
+
+ #RewriteCond %{REQUEST_FILENAME} !-f
+ #RewriteCond %{REQUEST_FILENAME} !-d
+ #RewriteRule ^(.*)$ index.php
+
+</IfModule>
+RewriteCond %{HTTP_HOST} ^whhaleylaw\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.whhaleylaw\.com$
+RewriteRule ^/?$ "http\:\/\/www\.parkridgelaw\.com\/" [R=301,L]
+
+AddHandler fcgid-script .fcgi
