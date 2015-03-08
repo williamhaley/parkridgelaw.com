@@ -1,15 +1,47 @@
 body {
   background: #f1f1f1;
   margin: 0;
-  margin-top:20px;
-  min-width: 320px;
+  font-family: 'Helvetica Neue', Arial, Helvetica, 'Nimbus Sans L', sans-serif;
+  font-size: 20px;
+}
+
+a {
+  color: #000;
 }
 
 #wrapper {
   background: #fff;
   margin: 0 auto;
   padding: 20px;
-  max-width: 980px;
+  max-width: 900px;
+  min-width: 280px; /* taking padding into account for 320px total */
+}
+
+/* consistent spacing between 'sections' */
+#header,
+#main,
+form {
+  margin-bottom: 1em;
+}
+
+/* consistent spacing between the top border */
+form,
+#footer {
+  padding-top: 1em;
+}
+
+textarea {
+  height: 5em;
+}
+
+input,
+textarea {
+  margin-top: 0.5em;
+  font-size: 1em;
+}
+
+form div {
+  margin-bottom: 0.5em;
 }
 
 img {
@@ -18,33 +50,37 @@ img {
   height: auto;
 }
 
-#main {
-  margin: 20px 0px 20px 0px;
-}
-
 #main div {
   line-height: 1.4em;
-  font-size: 1.4em;
-}
-
-#header h1 {
-  font-family: 'Helvetica Neue', Arial, Helvetica, 'Nimbus Sans L', sans-serif;
 }
 
 #footer {
   border-top: 3px solid black;
-  padding-top: 10px;
 }
 
-#header a,
-#footer a {
+#header,
+#footer {
   font-weight: bold;
-  font-family: 'Helvetica Neue', Arial, Helvetica, 'Nimbus Sans L', sans-serif;
-  line-height: 18px;
-  text-decoration: none;
   color: #000;
 }
 
+.button {
+  border-radius: 5px;
+  font-size: 1em;
+}
+
 form {
-  display: none;
+  border-top: 3px solid black;
+}
+
+form,
+form input,
+form textarea,
+form label,
+form button {
+}
+
+form input,
+form textarea {
+  width: 100%;
 }
