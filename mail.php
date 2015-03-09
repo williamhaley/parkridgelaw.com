@@ -15,7 +15,7 @@ $message = "Hey Dad,\n\nYou got a message from someone through your website.\n\n
 
 $message .= implode("\n", array("Name: $name", "Email: $email", "Phone: $phone", "Comment: $comment"));
 
-$result = mail('willhy@gmail.com', $subject, $message);
+$result = mail('', $subject, $message);
 
 if (!$result) {
 	header("HTTP/1.0 500 Internal Server Error");
