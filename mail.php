@@ -4,10 +4,10 @@ function getVar($arr, $named) {
         return !empty($arr[$named]) ? $arr[$named] : "$named not provided";
 }
 
-$name    = getVar($_GET, 'name');
-$email   = getVar($_GET, 'email');
-$comment = getVar($_GET, 'comment');
-$phone   = getVar($_GET, 'phone');
+$name    = getVar($_POST, 'name');
+$email   = getVar($_POST, 'email');
+$comment = getVar($_POST, 'comment');
+$phone   = getVar($_POST, 'phone');
 
 $subject = "[parkridgelaw.com - new message]";
 

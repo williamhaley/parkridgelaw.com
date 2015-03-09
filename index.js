@@ -21,6 +21,8 @@
   }
 
   function showConfirmation() {
+	$form.get(0).reset();
+
     alert('Thank you.  Your email has been sent.');
   }
 
