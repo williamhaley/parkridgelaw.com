@@ -1,20 +1,23 @@
 (function () {
   $form = $('form');
 
-  function submit() {
-    var data = $form.serialize();
+  function submit(event) {
+	event.preventDefault();
+
+	var data = {};
+
+	$form.serializeArray().map(function(item) {
+		data[item.name] = item.value;
+	});
 
     // Yeah, I know this is insecure, but leave it be, please.  I'll buy you a beer.
     sendEmail(data);
 
-    return false;
+	return false;
   }
 
   function sendEmail(data) {
-    $.post({
-      url:  'http://parkridgelaw.com/mail.php',
-      data: data
-    }).done(showConfirmation).fail(showError);
+    $.post('./mail.php', data).done(showConfirmation).fail(showError);
   }
 
   function showConfirmation() {

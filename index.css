@@ -40,12 +40,6 @@ textarea {
   height: 5em;
 }
 
-input,
-textarea {
-  margin-top: 0.5em;
-  font-size: 1em;
-}
-
 form div {
   margin-bottom: 0.5em;
 }
@@ -79,14 +73,10 @@ form {
   border-top: 3px solid black;
 }
 
-form,
-form input,
-form textarea,
-form label,
-form button {
-}
-
 form input,
 form textarea {
   width: 100%;
+  box-sizing: border-box;
+  margin-top: 0.5em;
+  font-size: 1em;
 }
