@@ -12,7 +12,7 @@
 
   function sendEmail(data) {
     $.post({
-      url:  '',
+      url:  'http://parkridgelaw.com/mail.php',
       data: data
     }).done(showConfirmation).fail(showError);
   }
