@@ -11,7 +11,7 @@ $phone   = getVar($_POST, 'phone');
 
 $subject = "[parkridgelaw.com - new message]";
 
-$message = "Hey Dad,\n\nYou got a message from someone through your website.\n\n";
+$message = "Hi Dad,\n\nYou received a new message from someone through your website.\n\n";
 
 $message .= implode("\n", array("Name: $name", "Email: $email", "Phone: $phone", "Comment: $comment"));
 
