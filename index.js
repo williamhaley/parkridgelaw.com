@@ -1,8 +1,12 @@
 (function () {
-	$form = $('form');
+	var $form        = $('form');
+	var $overlay     = $('.overlay');
+	var $contactLink = $('.contactLink');
 
 	function submit(event) {
 		event.preventDefault();
+
+		$overlay.show();
 
 		var data = {};
 
@@ -17,7 +21,7 @@
 	}
 
 	function sendEmail(data) {
-		$.post('./mail.php', data).done(showConfirmation).fail(showError);
+		$.post('./mail.php', data).done(showConfirmation).fail(showError).always(hideOverlay);
 	}
 
 	function showConfirmation() {
@@ -30,5 +34,15 @@
 		alert('There was an error.  Please try again later.');
 	}
 
+	function hideOverlay() {
+		$overlay.hide();
+	}
+
+	function focusOnContactForm() {
+		$form.find('input').get(0).focus();
+	}
+
 	$form.on('submit', submit);
+
+	$contactLink.on('click', focusOnContactForm);
 })();
