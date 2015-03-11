@@ -1,34 +1,34 @@
 (function () {
-  $form = $('form');
+	$form = $('form');
 
-  function submit(event) {
-	event.preventDefault();
+	function submit(event) {
+		event.preventDefault();
 
-	var data = {};
+		var data = {};
 
-	$form.serializeArray().map(function(item) {
-		data[item.name] = item.value;
-	});
+		$form.serializeArray().map(function(item) {
+			data[item.name] = item.value;
+		});
 
-    // Yeah, I know this is insecure, but leave it be, please.  I'll buy you a beer.
-    sendEmail(data);
+		// Yeah, I know this is insecure, but leave it be, please.  I'll buy you a beer.
+		sendEmail(data);
 
-	return false;
-  }
+		return false;
+	}
 
-  function sendEmail(data) {
-    $.post('./mail.php', data).done(showConfirmation).fail(showError);
-  }
+	function sendEmail(data) {
+		$.post('./mail.php', data).done(showConfirmation).fail(showError);
+	}
 
-  function showConfirmation() {
-	$form.get(0).reset();
+	function showConfirmation() {
+		$form.get(0).reset();
 
-    alert('Thank you.  Your email has been sent.');
-  }
+		alert('Thank you.  Your email has been sent.');
+	}
 
-  function showError() {
-    alert('There was an error.  Please try again later.');
-  }
+	function showError() {
+		alert('There was an error.  Please try again later.');
+	}
 
-  $form.on('submit', submit);
+	$form.on('submit', submit);
 })();
