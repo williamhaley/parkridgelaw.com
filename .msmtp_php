@@ -4,6 +4,6 @@ tls_certcheck off
 auth on
 host smtp.gmail.com
 port 587
-user wfhmailer.daemon@gmail.com
-from wfhmailer.daemon@gmail.com
+user MYMAILERDAEMON@gmail.com
+from MYMAILERDAEMON@gmail.com
 password THEPASSWORD
