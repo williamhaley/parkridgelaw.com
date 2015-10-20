@@ -1,7 +1,6 @@
 (function () {
 	var $form        = $('form');
 	var $overlay     = $('.overlay');
-	var $contactLink = $('.contactLink');
 
 	function submit(event) {
 		event.preventDefault();
@@ -43,6 +42,4 @@
 	}
 
 	$form.on('submit', submit);
-
-	$contactLink.on('click', focusOnContactForm);
 })();
