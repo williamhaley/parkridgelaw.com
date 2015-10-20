@@ -1,0 +1,9 @@
+account gmail
+tls on
+tls_certcheck off
+auth on
+host smtp.gmail.com
+port 587
+user wfhmailer.daemon@gmail.com
+from wfhmailer.daemon@gmail.com
+password THEPASSWORD
