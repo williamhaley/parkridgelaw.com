@@ -15,7 +15,7 @@ $message = "Hi Dad,\n\nYou received a new message from someone through your webs
 
 $message .= implode("\n", array("Name: $name", "Email: $email", "Phone: $phone", "Comment: $comment"));
 
-$result = mail('', $subject, $message);
+$result = mail('VALID_DAEMON_EMAIL_ADDRESS', $subject, $message);
 
 if (!$result) {
 	header("HTTP/1.0 500 Internal Server Error");
