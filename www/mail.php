@@ -1,7 +1,23 @@
 <?php
 
+define('REQUIRED_FILE', '../vendor/autoload.php');
+define('SENDER',        $_SERVER['MAIL_DAEMON_SENDER']);
+define('RECIPIENT',     $_SERVER['MAIL_DAEMON_RECIPIENT']);
+define('REGION',        'us-east-1');
+
+define('SUBJECT', '[parkridgelaw.com - new message]');
+
+require REQUIRED_FILE;
+
+use Aws\Ses\SesClient;
+
+$client = SesClient::factory(array(
+    'version'=> 'latest',
+    'region' => REGION
+));
+
 function getVar($arr, $named) {
-        return !empty($arr[$named]) ? $arr[$named] : "$named not provided";
+    return !empty($arr[$named]) ? $arr[$named] : "$named not provided";
 }
 
 $name    = getVar($_POST, 'name');
@@ -15,13 +31,19 @@ $message = "Hi Dad,\n\nYou received a new message from someone through your webs
 
 $message .= implode("\n", array("Name: $name", "Email: $email", "Phone: $phone", "Comment: $comment"));
 
-$result = mail('VALID_DAEMON_EMAIL_ADDRESS', $subject, $message);
+$request = array();
+$request['Source'] = SENDER;
+$request['Destination']['ToAddresses'] = array(RECIPIENT);
+$request['Message']['Subject']['Data'] = SUBJECT;
+$request['Message']['Body']['Text']['Data'] = $message;
 
-if (!$result) {
-	header("HTTP/1.0 500 Internal Server Error");
-} else {
-	header("HTTP/1.1 200 OK");
+try {
+    $result = $client->sendEmail($request);
+    $messageId = $result->get('MessageId');
+    echo("Email sent! Message ID: $messageId"."\n");
+} catch (Exception $e) {
+    echo("The email was not sent. Error message: ");
+    echo($e->getMessage()."\n");
 }
 
-header('Content-Type: application/json');
-echo json_encode($result == true);
+?>
