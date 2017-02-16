@@ -1,5 +1,13 @@
 # parkridgelaw.com
 
+## Deploy
+
+Commit changes.
+
+```
+eb deploy
+```
+
 ## Initial install
 
 ```
