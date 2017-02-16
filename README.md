@@ -26,6 +26,8 @@ Create a `Record Set` of type `A`, without specifying a subdomain, pointing at t
 
 Update the DNS provider (Google in this case) to use the custom name servers defined for the `NS` record in `Route53` for this domain.
 
+To handle the `www` redirect, create an S3 bucket and set it up to redirect to the `parkridgelaw.com` domain. Then, create an `A` record for `www` and point it to that bucket.
+
 ## Mail
 
 Verify the `SES` email for sender. All you need to do is addd the address under the `Email Addresses` section.
