@@ -53,5 +53,5 @@ Create an `IAM` user named `parkridgelaw.com-send-email-user` with `Programmatic
 
 Create an `AWS_ACCESS_KEY_ID` with the access key for the user you just created. Do the same for `AWS_SECRET_ACCESS_KEY`.
 
-Create environment variables also for `MAIL_DAEMON_SENDER` and `MAIL_DAEMON_RECIPIENT`. The former is the address used for the reply-to, the latter is the recipient of the email.
+Create environment variables also for `MAIL_DAEMON_SENDER` and `MAIL_DAEMON_RECIPIENT`. The former is the address used for the reply-to, the latter is the recipient of the email. In my case, I use the same address for both. That address will forward to the "real" recipient address.
 
