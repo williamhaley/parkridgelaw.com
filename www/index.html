@@ -42,11 +42,12 @@
     </div>
   </div>
 
-  <form netlify name="contact" method="POST" action="/success" >
+  <form netlify netlify-recaptcha name="contact" method="POST" action="/success" >
     <div><label>Email Address<br><input type="email" name="email" required="true"></label></div>
     <div><label>Name<br><input type="text" name="name" required="true"></label></div>
     <div><label>Phone<br><input type="text" name="phone"></label></div>
     <div><label>Comment<br><textarea name="comment"></textarea></label></div>
+    <div data-netlify-recaptcha></div>
 
     <button class="button" type="submit">Send</button>
   </form>
